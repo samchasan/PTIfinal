@@ -1,0 +1,155 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#question1,
+#question2,
+#question3,
+#question4,
+#question5,
+#question6,
+#question7,
+#question8 {
+  padding: 10px;
+}
+
+#questions {
+  font-size: 22px;
+  text-shadow: gray 1px 1px;
+  color: white;
+  font-family: Helvetica, sans-serif;
+}
+
+canvas {
+  display: block;
+}
+
+div {
+margin: 10px;
+}
+
+button {
+    position: relative
+    border: none;
+	    border-radius: 10px;
+    color: white;
+    padding: 0px 15px 10px;
+	    opacity: 0.8;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+button:hover {
+    opacity:0.6;
+}
+
+button:active {
+	    opacity: 1.0;
+}
+
+button:focus{
+ border-color:transparent!important;
+ outline:none;
+}
+
+#record {
+	    background-color: #3CB371; /* Green */
+}
+#stop {
+	    background-color: #CD5C5C; /* Crimson */
+}
+#clear {
+	    background-color: #4682B4; /* Blue */
+}
+#save {
+	    background-color: #B8860B; /* Gold */
+}
+
+#canvas {
+margin: 10px;
+}
+
+#gifs{
+  position:relative;
+  left: 10px;
+  top: 10px;
+  z-index: -1;
+}
+
+#titles{
+  position: relative;
+  top: 70px;
+  text-align: center;
+  color: 'red'
+}
+
+#title{
+  color:'black'
+}
+
+
+.opClass {
+    opacity:0.5;
+    /* filter:alpha(opacity=40); /* For IE8 and earlier */ */
+}
+
+/*  ***************** copied from w3 school ********************** */
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+    background: #000;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+}
+
+.buttoncontrols {
+  position:relative;
+  left: 40vw;
+  top: 5px;
+}
+
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles
+    /* appearance: none; */
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    position: relative;
+    left: 40px;
+    top: 0px;
+    margin: 10px,0px;
+    z-index: 1;
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider:-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look
+    /* appearance: none; */
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slider:-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
