@@ -2,8 +2,8 @@ let colors = []
 let red, orange, yellow, lime, seafoam, cyan, sky, royal;
 
 function setup() {
-  createCanvas(800,100)
   colorMode(HSB,360,100,100)
+
   red = color(14, 100, 90)
   orange = color(35, 100, 97)
   yellow = color(50, 100, 97)
@@ -23,26 +23,37 @@ function setup() {
   colors.push(royal)
 }
 
-
 let buttonClicked = false;
+
 
 function draw() {
   if (buttonClicked == true) {
     $('#questions').css("display", "none");
   }
-  getRange("range1","#question1")
-  getRange("range2","#question2")
-  getRange("range3","#question3")
-  getRange("range4","#question4")
-  getRange("range5","#question5")
-  getRange("range6","#question6")
-  getRange("range7","#question7")
-  getRange("range8","#question8")
 }
 
-function getRange(range,question) {
-  let slider = document.getElementById(range).value;
-  $(question).css("background-color", colors[slider]);
+
+$(document).on('input', '#question1', function(){getRange('#range1','#question1')});
+
+$(document).on('input', '#question2', function(){getRange('#range2','#question2')});
+
+$(document).on('input', '#question3', function(){getRange('#range3','#question3')});
+
+$(document).on('input', '#question4', function(){getRange('#range4','#question4')});
+
+$(document).on('input', '#question5', function(){getRange('#range5','#question5')});
+
+$(document).on('input', '#question6', function(){getRange('#range6','#question6')});
+
+$(document).on('input', '#question7', function(){getRange('#range7','#question7')});
+
+$(document).on('input', '#question8', function(){getRange('#range8','#question8')});
+
+
+
+function getRange(range, question) {
+  var val = $(range).val();
+  $(question).css("background-color", colors[val]);
 }
 
 
