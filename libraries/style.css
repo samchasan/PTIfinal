@@ -51,6 +51,22 @@ p {
   text-align: center;
 }
 
+h1 {
+  font-size: 42px;
+  font-kerning: 3px;
+  /* font-style: ; */
+  /* text-shadow: #b8b8b8 0px 1px; */
+  text-shadow: 0px 0px 15px #fff;
+  color: #888;
+  font-family: 'Raleway', sans-serif;
+  position: absolute;
+  white-space: nowrap ;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 label {
   font-size: 16px;
   color: #aaa;
