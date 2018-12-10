@@ -1,27 +1,12 @@
 let colors = []
 let red, orange, yellow, lime, seafoam, cyan, sky, royal;
 let noSleep = new NoSleep();
+let answers = [];
 
 function setup() {
   colorMode(HSB,360,100,100)
-
-  red = color(14, 100, 90)
-  orange = color(35, 100, 97)
-  yellow = color(50, 100, 97)
-  lime = color(80, 80, 93)
-  seafoam = color(150, 65, 93)
-  cyan = color(180, 85, 89)
-  sky = color(209, 85, 100)
-  royal = color(224, 87, 86)
-
-  colors.push(red)
-  colors.push(orange)
-  colors.push(yellow)
-  colors.push(lime)
-  colors.push(seafoam)
-  colors.push(cyan)
-  colors.push(sky)
-  colors.push(royal)
+  noCanvas()
+  setColors()
 }
 
 let buttonClicked = false;
@@ -33,31 +18,22 @@ function draw() {
   }
 }
 
-
 $(document).on('input', '#question1', function(){getRange('#range1','#question1')});
-
 $(document).on('input', '#question2', function(){getRange('#range2','#question2')});
-
 $(document).on('input', '#question3', function(){getRange('#range3','#question3')});
-
 $(document).on('input', '#question4', function(){getRange('#range4','#question4')});
-
 $(document).on('input', '#question5', function(){getRange('#range5','#question5')});
-
 $(document).on('input', '#question6', function(){getRange('#range6','#question6')});
-
 $(document).on('input', '#question7', function(){getRange('#range7','#question7')});
-
 $(document).on('input', '#question8', function(){getRange('#range8','#question8')});
 
 
+//////////////////////////////////////
 
 function getRange(range, question) {
   var val = $(range).val();
   $(question).css("background-color", colors[val]);
 }
-
-let answers = [];
 
 function getVals(range,question) {
   let answer = document.getElementsByName(question)[0].checked
@@ -78,7 +54,6 @@ function getVals(range,question) {
 
 }
 
-
 function submitForm() {
   buttonClicked = true;
   getVals("range1","question1")
@@ -89,10 +64,11 @@ function submitForm() {
   getVals("range6","question6")
   getVals("range7","question7")
   getVals("range8","question8")
-  resizeCanvas(windowWidth, windowHeight);
-  background(0);
+  // resizeCanvas(windowWidth, windowHeight);
+  // background(0);
   noSleep.enable(); // keep the screen on!
   console.log(answers)
+  $("body").css('background-color','black');
 }
 
 function colorResponse(number) {
@@ -102,38 +78,48 @@ function colorResponse(number) {
   console.log("Color: " + answers[real_number].color);
   if (answers[real_number].answer == "yes") {
     if (real_color == 0) {
-
-      background(red);
-      console.log("Red");
+      $("body").css('background-color',red);
     }
     if (real_color == 1) {
-      background(orange);
-      console.log("Orange");
+      $("body").css('background-color',orange);
     }
     }
     if (real_color == 2) {
-      background(yellow);
-      console.log('Yellow');
+      $("body").css('background-color',yellow);
     }
     if (real_color == 3) {
-      background(lime);
-      console.log('Lime');
+      $("body").css('background-color',lime);
     }
     if (real_color == 4) {
-      background(seafoam);
-      console.log('Seafoam');
+      $("body").css('background-color',seafoam);
     }
     if (real_color == 5) {
-      background(cyan);
-      console.log('Cyan');
+      $("body").css('background-color',cyan);
     }
     if (real_color == 6) {
-      background(sky);
-      console.log('Blue');
+      $("body").css('background-color',sky);
     }
     if (real_color == 7) {
-      background(royal);
-      console.log('Cyan');
+      $("body").css('background-color',royal);
     }
-
   }
+
+function setColors (){
+    red = color(14, 100, 90)
+    orange = color(35, 100, 97)
+    yellow = color(50, 100, 97)
+    lime = color(80, 80, 93)
+    seafoam = color(150, 65, 93)
+    cyan = color(180, 85, 89)
+    sky = color(209, 85, 100)
+    royal = color(224, 87, 86)
+
+    colors.push(red)
+    colors.push(orange)
+    colors.push(yellow)
+    colors.push(lime)
+    colors.push(seafoam)
+    colors.push(cyan)
+    colors.push(sky)
+    colors.push(royal)
+}
