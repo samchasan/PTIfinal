@@ -38,6 +38,17 @@ body:hover {
   width:50vw;
 }
 
+p {
+  font-size: 22px;
+  font-kerning: 3px;
+  /* font-style: ; */
+  /* text-shadow: #b8b8b8 0px 1px; */
+  text-shadow: 0px 0px 15px #fff;
+  color: #888;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
 label {
   font-size: 16px;
   color: #aaa;

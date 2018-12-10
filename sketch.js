@@ -1,5 +1,6 @@
 let colors = []
 let red, orange, yellow, lime, seafoam, cyan, sky, royal;
+let noSleep = new NoSleep();
 
 function setup() {
   colorMode(HSB,360,100,100)
@@ -56,8 +57,7 @@ function getRange(range, question) {
   $(question).css("background-color", colors[val]);
 }
 
-
-let answers = []
+let answers = [];
 
 function getVals(range,question) {
   let answer = document.getElementsByName(question)[0].checked
@@ -89,8 +89,51 @@ function submitForm() {
   getVals("range6","question6")
   getVals("range7","question7")
   getVals("range8","question8")
-
-  background(0)
-
+  resizeCanvas(windowWidth, windowHeight);
+  background(0);
+  noSleep.enable(); // keep the screen on!
   console.log(answers)
 }
+
+function colorResponse(number) {
+  $('#p1').css("display", "none");
+  var real_number = number - 1;
+  var real_color = answers[real_number].color;
+  console.log("Color: " + answers[real_number].color);
+  if (answers[real_number].answer == "yes") {
+    if (real_color == 0) {
+
+      background(red);
+      console.log("Red");
+    }
+    if (real_color == 1) {
+      background(orange);
+      console.log("Orange");
+    }
+    }
+    if (real_color == 2) {
+      background(yellow);
+      console.log('Yellow');
+    }
+    if (real_color == 3) {
+      background(lime);
+      console.log('Lime');
+    }
+    if (real_color == 4) {
+      background(seafoam);
+      console.log('Seafoam');
+    }
+    if (real_color == 5) {
+      background(cyan);
+      console.log('Cyan');
+    }
+    if (real_color == 6) {
+      background(sky);
+      console.log('Blue');
+    }
+    if (real_color == 7) {
+      background(royal);
+      console.log('Cyan');
+    }
+
+  }
