@@ -3,12 +3,18 @@
 <head>
 	<script src="libraries/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<link rel="stylesheet" type="text/css" href="libraries/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet">
 	<script type="text/javascript">
 		var socket = io.connect();
 		var current_question = 0;
+		var question_text;
+		var key_number;
 		socket.on('connect', function() {
 			console.log("Connected");
 			socket.emit('micCheck', null);
+			$('#whichQuestion').css("display", "none");
+
 
 
 			// Once we are connected, request the history
@@ -33,8 +39,16 @@
 		};
 
 
-		var get_question = function() {
-			current_question = document.getElementById("whichQuestion").value;
+		// var get_question = function() {
+		// 	current_question = document.getElementById("whichQuestion").value;
+		// 	console.log("Question: " + current_question);
+		// 	socket.emit('currentQuestion', current_question);
+		// 	updateQuestion();
+		// };
+
+		var get_question = function(data) {
+			current_question = data;
+			question_text = document.getElementById("whichQuestion").value;
 			console.log("Question: " + current_question);
 			socket.emit('currentQuestion', current_question);
 			updateQuestion();
@@ -49,14 +63,14 @@
 		$(document).on('keypress', function(e) {
 			console.log(e.which);
 			if (e.which >= 49 && e.which <=57) {
-			  var key_number = e.which - 48;
+			  key_number = e.which - 48;
 				updateSelection(key_number);
 				get_question(key_number);
 				console.log("You pressed " + key_number +"!");
 			}
 
 			if (e.which == 48) {
-				var key_number = 10;
+				key_number = 10;
 				updateSelection(10);
 				get_question(10);
 				console.log("You pressed " + key_number +"!");
@@ -68,26 +82,26 @@
 </head>
 
 <body>
-	<!-- <button type="button" onclick="micCheck(1)">micCheck</button> --> 
+	<!-- <button type="button" onclick="micCheck(1)">micCheck</button> -->
 
 	<select id="whichQuestion" onchange = "get_question()">
 	<option value="Wait">Wait</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-	<option value="5">5</option>
-	<option value="6">6</option>
-	<option value="7">7</option>
-	<option value="8">8</option>
+  <option value="Do you like pineapple on your pizza?">2</option>
+  <option value="Do you like to be outside when it rains?">2</option>
+  <option value="Do you enjoy time with your family?">3</option>
+  <option value="Do you have children?">4</option>
+	<option value="Do you sometimes think you're still a child?">5</option>
+	<option value="Do you laugh at poop jokes?">6</option>
+	<option value="Do you like eating?">7</option>
+	<option value="Are you alive?">8</option>
 </select>
 
 
-	<p id="p1">Please wait for the questions.</p>
+	<h1 id="h1">Please wait for the questions.</h1>
 
 	<script>
 		var updateQuestion = function() {
-			document.getElementById("p1").innerHTML = "The current question is: " + current_question;
+			document.getElementById("h1").innerHTML = question_text;
 		}
 	</script>
 
