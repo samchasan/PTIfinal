@@ -1,0 +1,96 @@
+<html>
+
+<head>
+	<script src="libraries/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript">
+		var socket = io.connect();
+		var current_question = 0;
+		socket.on('connect', function() {
+			console.log("Connected");
+			socket.emit('micCheck', null);
+
+
+			// Once we are connected, request the history
+			// socket.emit('history', null);
+		});
+
+		// Receive from any event
+		// 		socket.on('chatmessage', function (data) {
+		// 			document.getElementById('messages').innerHTML = "" + data + "\n<br />"
+		// + "" + document.getElementById('messages').innerHTML;
+		// 		});
+
+		// var sendmessage = function(message) {
+		// 	console.log("chatmessage: " + message);
+		// 	socket.emit('chatmessage', message);
+		// };
+
+
+		var micCheck = function(data) {
+			socket.emit('micCheck', data);
+			console.log("Mic Check" + data);
+		};
+
+
+		var get_question = function() {
+			current_question = document.getElementById("whichQuestion").value;
+			console.log("Question: " + current_question);
+			socket.emit('currentQuestion', current_question);
+			updateQuestion();
+		};
+
+		var updateSelection = function(data) {
+			document.getElementById("whichQuestion").selectedIndex = data;
+		}
+
+
+
+		$(document).on('keypress', function(e) {
+			console.log(e.which);
+			if (e.which >= 49 && e.which <=57) {
+			  var key_number = e.which - 48;
+				updateSelection(key_number);
+				get_question(key_number);
+				console.log("You pressed " + key_number +"!");
+			}
+
+			if (e.which == 48) {
+				var key_number = 10;
+				updateSelection(10);
+				get_question(10);
+				console.log("You pressed " + key_number +"!");
+			}
+		});
+
+
+	</script>
+</head>
+
+<body>
+	<!-- <button type="button" onclick="micCheck(1)">micCheck</button> --> 
+
+	<select id="whichQuestion" onchange = "get_question()">
+	<option value="Wait">Wait</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+</select>
+
+
+	<p id="p1">Please wait for the questions.</p>
+
+	<script>
+		var updateQuestion = function() {
+			document.getElementById("p1").innerHTML = "The current question is: " + current_question;
+		}
+	</script>
+
+</body>
+
+</html>
