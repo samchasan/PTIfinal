@@ -6,102 +6,110 @@
   <script src="libraries/p5.dom.js"></script>
   <script src="libraries/p5.sound.min.js"></script>
   <link rel="stylesheet" type="text/css" href="libraries/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet">
   <script src="sketch.js"></script>
 </head>
 
 <body>
 
-<div id="questions">
+  <div id="questions">
 
-  <div id="question1">
-    Do you like pineapple on your pizza?
-    <br>
-    Yes <input type="radio" name="question1" value="yes">
-    No <input type="radio" name="question1" value="no">
-    <br>
-    Color <input type="range" min="0" max="8" value="4" class="slider" id="range1">
-    <br>
-    <br>
-  </div>
+    <div class="radiowrapper" id="question1">
+      Do you like pineapple on your pizza?
+      <br>
+      <label>YES <input type="radio" name="question1" value="yes"></label>
+      <label>NO <input type="radio" name="question1" value="no"></label>
+      <br> Color
+      <br>
+      <input type="range" min="0" max="7" value="3.5" class="slider" id="range1">
+      <br>
+      <br>
+    </div>
 
-  <div id="question2">
-    Do you like to be outside when it rains?
-    <br>
-    Yes <input type="radio" name="question2" value="yes">
-    No <input type="radio" name="question2" value="no">
-    <br>
-    Color <input type="range" min="0" max="8" value="4" class="slider" id="range2">
-    <br>
-    <br>
-  </div>
+    <div class="radiowrapper" id="question2">
+      Do you like to be outside when it rains?
+      <br>
+      <label>  YES <input type="radio" name="question2" value="yes"></label>
+      <label>NO <input type="radio" name="question2" value="no"></label>
+      <br> Color
+      <br>
+      <input type="range" min="0" max="7" value="4" class="slider" id="range2">
+      <br>
+      <br>
+    </div>
 
-  <div id="question3">
-    Do you enjoy spending time with family?
-    <br>
-    Yes <input type="radio" name="question3" value="yes">
-    No <input type="radio" name="question3" value="no">
-    <br>
-    Color <input type="range" min="0" max="8" value="4" class="slider" id="range3">
-    <br>
-    <br>
-  </div>
+    <div class="radiowrapper" id="question3">
+      Do you enjoy spending time with family?
+      <br>
+      <label>  YES <input type="radio" name="question3" value="yes"></label>
+      <label>  NO <input type="radio" name="question3" value="no"></label>
+      <br> Color
+      <br>
+      <input type="range" min="0" max="7" value="4" class="slider" id="range3">
+      <br>
+      <br>
+    </div>
 
-  <div id="question4">
-    Do you have chilren?
-    <br>
-    Yes <input type="radio" name="question4" value="yes">
-    No <input type="radio" name="question4" value="no">
-    <br>
-    Color <input type="range" min="0" max="8" value="4" class="slider" id="range4">
-    <br>
-    <br>
-  </div>
+    <div class="radiowrapper" id="question4">
+      Do you have chilren?
+      <br>
+      <label>YES <input type="radio" name="question4" value="yes"></label>
+      <label>  NO <input type="radio" name="question4" value="no"></label>
+      <br> Color
+      <br>
+      <input type="range" min="0" max="7" value="4" class="slider" id="range4">
+      <br>
+      <br>
+    </div>
 
-  <div id="question5">
-    Do you sometimes think you are still a child?
-    <br>
-    Yes <input type="radio" name="question5" value="yes">
-    No <input type="radio" name="question5" value="no">
-    <br>
-    Color <input type="range" min="0" max="8" value="4" class="slider" id="range5">
-    <br>
-    <br>
-  </div>
+    <div class="radiowrapper" id="question5">
+      Do you sometimes think you are still a child?
+      <br>
+      <label>YES <input type="radio" name="question5" value="yes"></label>
+      <label>  NO <input type="radio" name="question5" value="no"></label>
+      <br> Color
+      <br>
+      <input type="range" min="0" max="7" value="4" class="slider" id="range5">
+      <br>
+      <br>
+    </div>
 
-  <div id="question6">
-    Do you laugh at poop jokes?
-    <br>
-    Yes <input type="radio" name="question6" value="yes">
-    No <input type="radio" name="question6" value="no">
-    <br>
-    Color <input type="range" min="0" max="8" value="4" class="slider" id="range6">
-    <br>
-    <br>
-  </div>
+    <div class="radiowrapper" id="question6">
+      Do you laugh at poop jokes?
+      <br>
+      <label>YES <input type="radio" name="question6" value="yes"></label>
+      <label>  NO <input type="radio" name="question6" value="no"></label>
+      <br> Color
+      <br>
+      <input type="range" min="0" max="7" value="4" class="slider" id="range6">
+      <br>
+      <br>
+    </div>
 
-  <div id="question7">
-    Do you like eating?
-    <br>
-    Yes <input type="radio" name="question7" value="yes">
-    No <input type="radio" name="question7" value="no">
-    <br>
-    Color <input type="range" min="0" max="8" value="4" class="slider" id="range7">
-    <br>
-    <br>
-  </div>
+    <div class="radiowrapper" id="question7">
+      Do you like eating?
+      <br>
+      <label>  YES <input type="radio" name="question7" value="yes"></label>
+      <label>  NO <input type="radio" name="question7" value="no"></label>
+      <br> Color
+      <br>
+      <input type="range" min="0" max="7" value="4" class="slider" id="range7">
+      <br>
+      <br>
+    </div>
 
-  <div id="question8">
-    Are you alive?
-    <br>
-    Yes <input type="radio" name="question8" value="yes">
-    No <input type="radio" name="question8" value="no">
-    <br>
-    Color <input type="range" min="0" max="8" value="4" class="slider" id="range8">
-    <br>
-    <br>
-  </div>
-
+    <div class="radiowrapper" id="question8">
+      Are you alive?
+      <br>
+      <label>  YES <input type="radio" name="question8" value="yes"></label>
+      <label>  NO <input type="radio" name="question8" value="no"></label>
+      <br> Color
+      <br>
+      <input type="range" min="0" max="7" value="4" class="slider" id="range8">
+      <br>
+      <br>
+    </div>
     <button id="submit" onclick="submitForm()"> SUBMIT </button>
-</div>
+  </div>
 
 </body>

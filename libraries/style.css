@@ -1,6 +1,6 @@
-html, body {
-  margin: 0;
-  padding: 0;
+html, body, head {
+  margin: 0 !important;
+  padding: 0!important;
 }
 
 #question1,
@@ -11,14 +11,29 @@ html, body {
 #question6,
 #question7,
 #question8 {
-  padding: 10px;
+  background-image: linear-gradient(rgba(255,255,255,20), rgba(255,255,255,0));
+  /* padding: 10px; */
 }
 
 #questions {
   font-size: 22px;
-  text-shadow: gray 1px 1px;
-  color: white;
-  font-family: Helvetica, sans-serif;
+  font-kerning: 3px;
+  /* font-style: ; */
+  /* text-shadow: #b8b8b8 0px 1px; */
+  text-shadow: 0px 0px 15px #fff;
+  color: #888;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+#questions text{
+  width:50vw;
+}
+
+label {
+  font-size: 16px;
+  color: #aaa;
+  margin: 20px 0px;
 }
 
 canvas {
@@ -33,10 +48,13 @@ button {
     position: relative
     border: none;
 	    border-radius: 10px;
-    color: white;
-    padding: 0px 15px 10px;
+    background: rgb(83,237,159);
+    color: #333;
+    text-shadow: #f8f8f8 0px 1px;
+    padding: 18px 25px ;
 	    opacity: 0.8;
     text-align: center;
+    font-family: 'Raleway', sans-serif;
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
@@ -44,52 +62,18 @@ button {
 
 button:hover {
     opacity:0.6;
+    cursor: pointer;
 }
 
 button:active {
 	    opacity: 1.0;
+      cursor: pointer;
 }
 
 button:focus{
  border-color:transparent!important;
  outline:none;
 }
-
-#record {
-	    background-color: #3CB371; /* Green */
-}
-#stop {
-	    background-color: #CD5C5C; /* Crimson */
-}
-#clear {
-	    background-color: #4682B4; /* Blue */
-}
-#save {
-	    background-color: #B8860B; /* Gold */
-}
-
-#canvas {
-margin: 10px;
-}
-
-#gifs{
-  position:relative;
-  left: 10px;
-  top: 10px;
-  z-index: -1;
-}
-
-#titles{
-  position: relative;
-  top: 70px;
-  text-align: center;
-  color: 'red'
-}
-
-#title{
-  color:'black'
-}
-
 
 .opClass {
     opacity:0.5;
@@ -118,16 +102,17 @@ margin: 10px;
 .slider {
     -webkit-appearance: none;  /* Override default CSS styles
     /* appearance: none; */
-    width: 100%; /* Full-width */
-    height: 25px; /* Specified height */
+    width: 95%; /* Full-width */
+    height: 15px; /* Specified height */
     position: relative;
-    left: 40px;
-    top: 0px;
-    margin: 10px,0px;
+    border-radius: 5px;
+    left: 3px;
+    top: 10px;
+    /* margin: 10px; */
     z-index: 1;
-    background: #d3d3d3; /* Grey background */
+    background: #f8f8f8; /* Grey background */
     outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    opacity: 0.8; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
 }
@@ -138,18 +123,69 @@ margin: 10px;
 }
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-.slider:-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look
-    /* appearance: none; */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width*/
+    height: 25px; /* Slider handle height */
+    border-radius: 50%;
+    background: #aaaaaa;
+    cursor: pointer; /* Cursor on hover */
+    color: white;
+}
+
+.slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
+    border-radius: 50%;
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
 
-.slider:-moz-range-thumb {
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #4CAF50; /* Green background */
-    cursor: pointer; /* Cursor on hover */
+#questions input[type=radio] {
+  margin: 0px 10px ;
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 15px; /* Set a specific slider handle width*/
+  height: 15px; /* Slider handle height */
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer; /* Cursor on hover */
+  opacity: 1;
 }
+
+#questions input[type=radio]:hover {
+  appearance:none;
+  background: #ddd;
+}
+
+
+#questions input[type=radio]:active {
+  appearance:none;
+  background: #aaa;
+  opacity: 1;
+
+}
+
+#questions input[type=radio]:checked {
+  appearance:none;
+  background: #aaa;
+  opacity: 1;
+}
+
+#questions input[type=radio]:focus {
+  appearance:none;
+  border-color:transparent!important;
+  outline:none;
+}
+
+
+/*
+.radiowrapper input[type:radio] {
+  visibility:hidden; width:0;
+}
+
+.radiowrapper input:checked + label {
+  font-weight:bold;
+  text-transform:uppercase
+} */
