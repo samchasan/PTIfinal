@@ -25,8 +25,45 @@ $(document).on('input', '#question6', function(){getRange('#range6','#question6'
 $(document).on('input', '#question7', function(){getRange('#range7','#question7')});
 $(document).on('input', '#question8', function(){getRange('#range8','#question8')});
 
+////////////////////////////////////////////////////////////////////////////
 
-//////////////////////////////////////
+function colorResponse(number) {
+  $('#p1').css("display", "none");
+  var real_number = number - 1;
+  var real_color = answers[real_number].color;
+  console.log("Color: " + answers[real_number].color);
+  if (answers[real_number].answer == "yes") {
+    if (real_color == 0) {
+      $("body").css('background-color',red);
+    }
+    if (real_color == 1) {
+      $("body").css('background-color',orange);
+    }
+    if (real_color == 2) {
+      $("body").css('background-color',yellow);
+    }
+    if (real_color == 3) {
+      $("body").css('background-color',lime);
+    }
+    if (real_color == 4) {
+      $("body").css('background-color',seafoam);
+    }
+    if (real_color == 5) {
+      $("body").css('background-color',cyan);
+    }
+    if (real_color == 6) {
+      $("body").css('background-color',sky);
+    }
+    if (real_color == 7) {
+      $("body").css('background-color',royal);
+    }
+  }
+  if (answers[real_number].answer == "no") {
+    $("body").css('background-color','black');
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////
 
 function getRange(range, question) {
   var val = $(range).val();
@@ -66,38 +103,6 @@ function submitForm() {
   // console.log(answers)
   $("body").css('background-color','black');
 }
-
-function colorResponse(number) {
-  $('#p1').css("display", "none");
-  var real_number = number - 1;
-  var real_color = answers[real_number].color;
-  console.log("Color: " + answers[real_number].color);
-  if (answers[real_number].answer == "yes") {
-    if (real_color == 0) {
-      $("body").css('background-color',red);
-    }
-    if (real_color == 1) {
-      $("body").css('background-color',orange);
-    }
-    if (real_color == 2) {
-      $("body").css('background-color',yellow);
-    }
-    if (real_color == 3) {
-      $("body").css('background-color',lime);
-    }
-    if (real_color == 4) {
-      $("body").css('background-color',seafoam);
-    }
-    if (real_color == 5) {
-      $("body").css('background-color',cyan);
-    }
-    if (real_color == 6) {
-      $("body").css('background-color',sky);
-    }
-    if (real_color == 7) {
-      $("body").css('background-color',royal);
-    }
-  }
 
 function setColors (){
     red = color(14, 100, 90)
