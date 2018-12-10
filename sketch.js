@@ -2,15 +2,13 @@ let colors = []
 let red, orange, yellow, lime, seafoam, cyan, sky, royal;
 let noSleep = new NoSleep();
 let answers = [];
+let buttonClicked = false;
 
 function setup() {
   colorMode(HSB,360,100,100)
   noCanvas()
   setColors()
 }
-
-let buttonClicked = false;
-
 
 function draw() {
   if (buttonClicked == true) {
@@ -64,10 +62,8 @@ function submitForm() {
   getVals("range6","question6")
   getVals("range7","question7")
   getVals("range8","question8")
-  // resizeCanvas(windowWidth, windowHeight);
-  // background(0);
   noSleep.enable(); // keep the screen on!
-  console.log(answers)
+  // console.log(answers)
   $("body").css('background-color','black');
 }
 
@@ -82,7 +78,6 @@ function colorResponse(number) {
     }
     if (real_color == 1) {
       $("body").css('background-color',orange);
-    }
     }
     if (real_color == 2) {
       $("body").css('background-color',yellow);
