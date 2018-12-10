@@ -32,6 +32,7 @@ function colorResponse(number) {
   var real_number = number - 1;
   var real_color = answers[real_number].color;
   console.log("Color: " + answers[real_number].color);
+  console.log(answers[real_number].answer);
   if (answers[real_number].answer == "yes") {
     if (real_color == 0) {
       $("body").css('background-color',red);
@@ -58,7 +59,7 @@ function colorResponse(number) {
       $("body").css('background-color',royal);
     }
   }
-  if (answers[real_number].answer == "no") {
+  else if (answers[real_number].answer == "no") {
     $("body").css('background-color','black');
   }
 }
