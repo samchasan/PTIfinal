@@ -1,6 +1,5 @@
 let question1, question2, question3, question4, question5, question6, question7, question8;
 
-
 function loadSounds() {
   question1 = loadSound('samples/stem1.mp3');
   question2 = loadSound('samples/stem2.mp3')
@@ -12,32 +11,7 @@ function loadSounds() {
   question8 = loadSound('samples/stem8.mp3')
 }
 
-let previousNote;
-let currentNote;
-let looping = false;
-
-function loopNote(question) {
-  question.loop();
-  //
-  // if(!looping){
-  //     currentNote = question
-  //     currentNote.loop();
-  //     previousNote = currentNote
-  //     looping = true
-  //   } else if (looping){
-  //     previousNote.clear()
-  //     currentNote = question
-  //     currentNote.loop();
-  //     previousNote = currentNote
-  //   }
-}
-
-let whichQuestion
-
-$(document).keydown(function(e) {
-  let data = e.key
-  whichQuestion = "question" + data;
-
+function playNote(data){
   if (data == 1 ){
     question1.loop()
   }else if (data == 2 ){
@@ -62,4 +36,4 @@ $(document).keydown(function(e) {
     question8.loop()
     question7.stop()
   }
-})
+}
