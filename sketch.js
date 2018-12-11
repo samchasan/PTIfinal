@@ -4,6 +4,12 @@ let noSleep = new NoSleep();
 let answers = [];
 let buttonClicked = false;
 
+
+function preload() {
+  soundFormats('mp3', 'm4a', 'ogg');
+  loadSounds()
+}
+
 function setup() {
   colorMode(HSB,360,100,100)
   noCanvas()
