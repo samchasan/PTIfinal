@@ -20,6 +20,9 @@
 			socket.emit('history', null);
 		});
 
+		socket.on('allColors', function(){
+			allColors();
+		});
 
 		socket.on('currentQuestion', function(data) {
 			// console.log(data);
@@ -135,4 +138,3 @@
   </div>
 
 </body>
-

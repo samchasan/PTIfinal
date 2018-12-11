@@ -3,6 +3,8 @@ let red, orange, yellow, lime, seafoam, cyan, sky, royal;
 let noSleep = new NoSleep();
 let answers = [];
 let buttonClicked = false;
+var real_color;
+var real_number;
 
 function setup() {
   colorMode(HSB,360,100,100)
@@ -29,8 +31,8 @@ $(document).on('input', '#question8', function(){getRange('#range8','#question8'
 
 function colorResponse(number) {
   $('#p1').css("display", "none");
-  var real_number = number - 1;
-  var real_color = answers[real_number].color;
+  real_number = number - 1;
+  real_color = answers[real_number].color;
   console.log("Color: " + answers[real_number].color);
   console.log(answers[real_number].answer);
   if (answers[real_number].answer == "yes") {
@@ -62,6 +64,39 @@ function colorResponse(number) {
   else if (answers[real_number].answer == "no") {
     $("body").css('background-color','black');
   }
+}
+
+function allColors(number) {
+  // real_number = number - 1;
+  // console.log(answers[real_number].color);
+  // real_color = answers[real_number].color;
+  console.log("Color: " + answers[real_number].color);
+  console.log(answers[real_number].answer);
+    if (real_color == 0) {
+      $("body").css('background-color',red);
+    }
+    if (real_color == 1) {
+      $("body").css('background-color',orange);
+    }
+    if (real_color == 2) {
+      $("body").css('background-color',yellow);
+    }
+    if (real_color == 3) {
+      $("body").css('background-color',lime);
+    }
+    if (real_color == 4) {
+      $("body").css('background-color',seafoam);
+    }
+    if (real_color == 5) {
+      $("body").css('background-color',cyan);
+    }
+    if (real_color == 6) {
+      $("body").css('background-color',sky);
+    }
+    if (real_color == 7) {
+      $("body").css('background-color',royal);
+    }
+
 }
 
 ////////////////////////////////////////////////////////////////////////////

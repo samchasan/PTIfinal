@@ -49,6 +49,12 @@ io.sockets.on('connection',
 			console.log("Mic Check " + data);
 		});
 
+		socket.on('allColors', function(){
+			console.log("You pressed the spacebar!");
+			io.sockets.emit('allColors');
+
+		});
+
 		// socket.on('history', function() {
 		// 	io.socket.emit('currentQuestion', current_question);
 		// });
