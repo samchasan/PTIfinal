@@ -42,31 +42,42 @@ function colorResponse(number) {
   if (answers[real_number].answer == "yes") {
     if (real_color == 0) {
       $("body").css('background-color',red);
+      playNote(0)
     }
     if (real_color == 1) {
       $("body").css('background-color',orange);
+      playNote(1)
     }
     if (real_color == 2) {
       $("body").css('background-color',yellow);
+      playNote(2)
     }
     if (real_color == 3) {
       $("body").css('background-color',lime);
+      playNote(3)
     }
     if (real_color == 4) {
       $("body").css('background-color',seafoam);
+      playNote(4)
     }
     if (real_color == 5) {
       $("body").css('background-color',cyan);
+      playNote(5)
+
     }
     if (real_color == 6) {
       $("body").css('background-color',sky);
+      playNote(6)
+
     }
     if (real_color == 7) {
       $("body").css('background-color',royal);
+      playNote(7)
     }
   }
   else if (answers[real_number].answer == "no") {
     $("body").css('background-color','black');
+    playNote(bass)
   }
 }
 
