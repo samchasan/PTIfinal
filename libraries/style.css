@@ -4,6 +4,13 @@ html, body, head {
   background-color: #ddd;
   transition: 2s;
 }
+
+#controllerbody {
+  margin: 0 !important;
+  padding: 0!important;
+  background-color: #000;
+  transition: 2s;
+}
 /*
 body:hover {
   background-color: #101010;
@@ -215,7 +222,7 @@ button:focus{
   border-color:transparent!important;
   outline:none;
 }
- 
+
 
 .radiowrapper input[type=radio] {
   visibility: hidden;
