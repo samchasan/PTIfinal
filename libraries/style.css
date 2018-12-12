@@ -178,7 +178,7 @@ button:focus{
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
-/*
+
 #questions input[type=radio] {
   margin: 0px 10px ;
   -webkit-appearance: none;
@@ -215,8 +215,7 @@ button:focus{
   border-color:transparent!important;
   outline:none;
 }
- */
-
+ 
 
 .radiowrapper input[type=radio] {
   visibility: hidden;

@@ -63,12 +63,10 @@ function colorResponse(number) {
     if (real_color == 5) {
       $("body").css('background-color',cyan);
       playNote(6)
-
     }
     if (real_color == 6) {
       $("body").css('background-color',sky);
       playNote(7)
-
     }
     if (real_color == 7) {
       $("body").css('background-color',royal);
