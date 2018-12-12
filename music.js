@@ -28,10 +28,7 @@ function playNote(data){
     sound6.play()
   }else if (data == 7 ){
     sound7.play()
-  }else if (data == 8 ){
-    sound8.play()
   }else if (data == bass ){
     bass.play()
   }
-
 }
