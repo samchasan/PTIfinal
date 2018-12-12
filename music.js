@@ -1,39 +1,34 @@
-let question1, question2, question3, question4, question5, question6, question7, question8;
+let sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8;
+let bass;
 
 function loadSounds() {
-  question1 = loadSound('samples/stem1.mp3');
-  question2 = loadSound('samples/stem2.mp3')
-  question3 = loadSound('samples/stem3.mp3');
-  question4 = loadSound('samples/stem4.mp3');
-  question5 = loadSound('samples/stem5.mp3');
-  question6 = loadSound('samples/stem6.mp3');
-  question7 = loadSound('samples/stem7.mp3')
-  question8 = loadSound('samples/stem8.mp3')
+  sound1 = loadSound('samples/sounds1.mp3');
+  sound2 = loadSound('samples/sounds2.mp3')
+  sound3 = loadSound('samples/sounds3.mp3');
+  sound4 = loadSound('samples/sounds4.mp3');
+  sound5 = loadSound('samples/sounds5.mp3');
+  sound6 = loadSound('samples/sounds6.mp3');
+  sound7 = loadSound('samples/sounds7.mp3')
+  sound8 = loadSound('samples/sounds8.mp3')
+  bass = loadSound('samples/bass.mp3')
 }
 
 function playNote(data){
   if (data == 1 ){
-    question1.loop()
+    sound1.play()
   }else if (data == 2 ){
-    question2.loop()
-    question1.stop()
+    sound2.play()
   }else if (data == 3 ){
-    question3.loop()
-    question2.stop()
+    sound3.play()
   }else if (data == 4 ){
-    question4.loop()
-    question3.stop()
+    sound4.play()
   }else if (data == 5 ){
-    question5.loop()
-    question4.stop()
+    sound5.play()
   }else if (data == 6 ){
-    question6.loop()
-    question5.stop()
+    sound6.play()
   }else if (data == 7 ){
-    question7.loop()
-    question6.stop()
+    sound7.play()
   }else if (data == 8 ){
-    question8.loop()
-    question7.stop()
+    sound8.play()
   }
 }
