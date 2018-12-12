@@ -3,14 +3,14 @@ let bass;
 
 function loadSounds() {
   sound1 = loadSound('samples/sounds1.mp3');
-  sound2 = loadSound('samples/sounds2.mp3')
+  sound2 = loadSound('samples/sounds2.mp3');
   sound3 = loadSound('samples/sounds3.mp3');
   sound4 = loadSound('samples/sounds4.mp3');
   sound5 = loadSound('samples/sounds5.mp3');
   sound6 = loadSound('samples/sounds6.mp3');
-  sound7 = loadSound('samples/sounds7.mp3')
-  sound8 = loadSound('samples/sounds8.mp3')
-  bass = loadSound('samples/bass.mp3')
+  sound7 = loadSound('samples/sounds7.mp3');
+  sound8 = loadSound('samples/sounds8.mp3');
+  bass = loadSound('samples/bass.mp3');
 }
 
 function playNote(data){

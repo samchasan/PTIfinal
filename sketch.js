@@ -5,15 +5,12 @@ let answers = [];
 let buttonClicked = false;
 
 
-function preload() {
-  soundFormats('mp3', 'm4a', 'ogg');
-  loadSounds()
-}
-
 function setup() {
   colorMode(HSB,360,100,100)
   noCanvas()
   setColors()
+  soundFormats('mp3');
+  loadSounds()
 }
 
 function draw() {
@@ -42,40 +39,40 @@ function colorResponse(number) {
   if (answers[real_number].answer == "yes") {
     if (real_color == 0) {
       $("body").css('background-color',red);
-      playNote(1)
+      // playNote(1)
     }
     if (real_color == 1) {
       $("body").css('background-color',orange);
-      playNote(2)
+      // playNote(2)
     }
     if (real_color == 2) {
       $("body").css('background-color',yellow);
-      playNote(3)
+      // playNote(3)
     }
     if (real_color == 3) {
       $("body").css('background-color',lime);
-      playNote(4)
+      // playNote(4)
     }
     if (real_color == 4) {
       $("body").css('background-color',seafoam);
-      playNote(5)
+      // playNote(5)
     }
     if (real_color == 5) {
       $("body").css('background-color',cyan);
-      playNote(6)
+      // playNote(6)
     }
     if (real_color == 6) {
       $("body").css('background-color',sky);
-      playNote(7)
+      // playNote(7)
     }
     if (real_color == 7) {
       $("body").css('background-color',royal);
-      playNote(8)
+      // playNote(8)
     }
   }
   else if (answers[real_number].answer == "no") {
     $("body").css('background-color','black');
-    playNote(bass)
+    // playNote(bass)
   }
 }
 
@@ -84,10 +81,11 @@ function colorResponse(number) {
 function getRange(range, question) {
   var val = $(range).val();
   $(question).css("background-color", colors[val]);
+  console.log(question)
 }
 
 function getVals(range,question) {
-  let answer = document.getElementsByName(question)[0].checked
+  let answer = document.getElementsByName(question)[0].checked;
   let sliderVal = document.getElementById(range).value;
 
   if(answer){
